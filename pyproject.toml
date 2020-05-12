@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vibrant"
-version = "0.1.0"
+version = "0.0.1"
 description = "PyTorch powered Finite Elements"
 
 license = "MIT"
@@ -10,7 +10,7 @@ authors = ["German Capuano <e@gcapu.com>"]
 readme = "README.md"
 
 homepage = "https://pypi.org/project/vibrant"
-documentation = "https://vibrant.readthedocs.io"
+documentation = "https://gcapu.github.io"
 repository = "https://github.com/gcapu/vibrant"
 
 keywords = [
