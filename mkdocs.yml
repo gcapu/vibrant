@@ -1,0 +1,21 @@
+site_name: vibrant
+site_description: PyTorch powered Finite Elements
+site_author: German Capuano
+
+repo_url: https://github.com/gcapu/vibrant
+edit_uri: https://github.com/gcapu/vibrant/edit/master/docs
+
+theme:
+  name: material
+  logo: logo.svg
+
+markdown_extensions:
+  - codehilite
+
+nav:
+  - Home: index.md
+  - Advanced: advanced.md
+  - About:
+      - Release Notes: about/changelog.md
+      - Contributing: about/contributing.md
+      - License: about/license.md

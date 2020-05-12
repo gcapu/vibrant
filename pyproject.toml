@@ -1,15 +1,96 @@
 [tool.poetry]
 name = "vibrant"
 version = "0.1.0"
-description = ""
-authors = ["German Capuano <capuano@gatech.edu>"]
+description = "PyTorch powered Finite Elements"
+
+license = "MIT"
+
+authors = ["German Capuano <e@gcapu.com>"]
+
+readme = "README.md"
+
+homepage = "https://pypi.org/project/vibrant"
+documentation = "https://vibrant.readthedocs.io"
+repository = "https://github.com/gcapu/vibrant"
+
+keywords = [
+]
+classifiers = [
+    # check: https://pypi.org/pypi?%3Aaction=list_classifiers
+    "Development Status :: 1 - Planning",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Physics",
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
 
+pyvista = "^0.24"
+torch = "^1.2"
+
 [tool.poetry.dev-dependencies]
+
+# Formatters
+black = {version = "^19.10b0", allow-prereleases = true} # auto format
+isort = "4.3.21" # sorts imports alphabetically
+
+# Linters
+mypy = "*"
+pydocstyle = "*" # check docstrings
+pylint = "*"
+
+# Testing
 pytest = "^5.2"
+pytest-cov = "^2.8.1" # covfefe
+pytest-describe = "^1.0.0" # allows tests in nested describe-blocks
+pytest-random = "*"
+
+# Reports
+coveragespace = "^3.1.1"
+
+# Documentation
+mkdocs = "~1.0" # Building documentation
+mkdocs-material = "*"
+
+[tool.black]
+
+target-version = ["py37"]
+skip-string-normalization = true
+
+[tool.isort]
+
+not_skip = "__init__.py"
+
+multi_line_output = 3
+
+known_standard_library = "dataclasses, typing_extensions"
+known_third_party = "pyvista, torch"
+known_first_party = "vibrant"
+
+combine_as_imports = true
+force_grid_wrap = false
+include_trailing_comma = true
+
+lines_after_imports = 2
+line_length = 88
+
+[tool.poetry.scripts]
+
+format = "scripts:format"
+lint = "scripts:lint"
+start = "scripts:start"
+test = "scripts:test"
+retest = "scripts:retest"
+mkdocs = "scripts:docs"
+servedocs = "scripts:servedocs"
+clean = "scripts:clean"
 
 [build-system]
+
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
