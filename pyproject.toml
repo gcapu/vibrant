@@ -86,7 +86,7 @@ lint = "scripts:lint"
 start = "scripts:start"
 test = "scripts:test"
 retest = "scripts:retest"
-mkdocs = "scripts:docs"
+docs = "scripts:docs"
 servedocs = "scripts:servedocs"
 clean = "scripts:clean"
 
