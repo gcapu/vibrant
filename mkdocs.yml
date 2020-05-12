@@ -8,6 +8,7 @@ edit_uri: https://github.com/gcapu/vibrant/edit/master/docs
 theme:
   name: material
   logo: logo.svg
+  favicon: logo.svg
 
 markdown_extensions:
   - codehilite
