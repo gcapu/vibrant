@@ -22,13 +22,13 @@ Warning: Work in progress.
 Install it directly into an activated virtual environment:
 
 ```text
-$ pip install vibrant
+pip install vibrant
 ```
 
 or add it to your [Poetry](https://poetry.eustace.io/) project:
 
 ```text
-$ poetry add vibrant
+poetry add vibrant
 ```
 
 ## Usage
