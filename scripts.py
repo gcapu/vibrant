@@ -66,7 +66,7 @@ def docs() -> None:
 
 def clean() -> None:
     # wildcards need shell=True
-    call("rm -rf .cache .coverage htmlcov *.egg-info site *.dot", shell=True)
+    call("rm -rf dist .cache .coverage htmlcov *.egg-info site *.dot", shell=True)
     call(
         "find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete",
         shell=True,
