@@ -40,3 +40,7 @@ $ python
 >>> import vibrant
 >>> vibrant.__version__
 ```
+
+## Documentation
+
+For more information about advanced features, see the official vibrant [documentation](https://gcapu.github.io/).
