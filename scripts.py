@@ -19,12 +19,6 @@ def format() -> None:
 def lint() -> None:
     warn_call(["pydocstyle", "vibrant/", "tests/"])
     warn_call(["pylint", "vibrant/", "tests/", "--rcfile=.pylint.ini"])
-    warn_call(["mypy", "vibrant/", "tests/", "--config-file=.mypy.ini"])
-
-
-def start() -> None:
-    # warn_call(["python", "src/backend/run.py"])
-    pass
 
 
 def test() -> None:
@@ -37,7 +31,6 @@ def test() -> None:
             "--cov=vibrant",
         ]
     )
-    warn_call(["coveragespace", "gcapu/vibrant", "overall"])
 
 
 def retest() -> None:

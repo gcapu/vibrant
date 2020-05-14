@@ -40,7 +40,6 @@ black = {version = "^19.10b0", allow-prereleases = true} # auto format
 isort = "4.3.21" # sorts imports alphabetically
 
 # Linters
-mypy = "*"
 pydocstyle = "*" # check docstrings
 pylint = "*"
 
@@ -49,9 +48,6 @@ pytest = "^5.2"
 pytest-cov = "^2.8.1" # covfefe
 pytest-describe = "^1.0.0" # allows tests in nested describe-blocks
 pytest-random = "*"
-
-# Reports
-coveragespace = "^3.1.1"
 
 # Documentation
 mkdocs = "~1.0" # Building documentation
@@ -83,7 +79,6 @@ line_length = 88
 
 format = "scripts:format"
 lint = "scripts:lint"
-start = "scripts:start"
 test = "scripts:test"
 retest = "scripts:retest"
 docs = "scripts:docs"
