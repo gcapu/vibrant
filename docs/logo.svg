@@ -10,12 +10,15 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="50.560589mm"
-   height="49.599594mm"
-   viewBox="0 0 50.560589 49.599594"
+   height="49.59959mm"
+   viewBox="0 0 50.560589 49.59959"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06"
-   sodipodi:docname="logo2e.svg">
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/Users/capuano/repos/vibrant/docs/logo_all.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -25,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="139.69287"
-     inkscape:cy="79.73301"
+     inkscape:zoom="0.24748738"
+     inkscape:cx="141.36653"
+     inkscape:cy="66.315994"
      inkscape:document-units="mm"
      inkscape:current-layer="text4547"
      showgrid="false"
@@ -40,7 +43,8 @@
      fit-margin-top="0.1"
      fit-margin-left="0.1"
      fit-margin-right="0.1"
-     fit-margin-bottom="0.1" />
+     fit-margin-bottom="0.1"
+     showguides="false" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -57,60 +61,60 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-143.65241,-56.418926)">
+     transform="translate(-140.25063,-165.65405)">
     <g
        aria-label="V"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:0%;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="text4547"
        transform="translate(-4.4266516,0.20045215)">
       <path
-         inkscape:connector-curvature="0"
-         id="path834"
-         d="m 148.17906,56.318474 4.73345,9.928151 h 10.17301 l -4.71427,-9.928151 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#ff6cd5;fill-opacity:1;stroke-width:3.27948618px"
-         sodipodi:nodetypes="ccccc" />
+         sodipodi:nodetypes="ccccc"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#ff128b;fill-opacity:1;stroke-width:3.27948618px"
+         d="m 144.77728,165.5536 4.73345,9.92815 h 10.17301 l -4.71427,-9.92815 z"
+         id="path994"
+         inkscape:connector-curvature="0" />
       <path
-         inkscape:connector-curvature="0"
-         id="path838"
-         d="m 154.48181,69.538903 4.68865,9.832064 h 10.14736 l -4.66943,-9.832064 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#53dfff;fill-opacity:1;stroke-width:3.27948618px"
-         sodipodi:nodetypes="ccccc" />
+         sodipodi:nodetypes="ccccc"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#ffa255;fill-opacity:1;stroke-width:3.27948618px"
+         d="m 151.08003,178.77403 4.68865,9.83206 h 10.14736 l -4.66943,-9.83206 z"
+         id="path996"
+         inkscape:connector-curvature="0" />
       <path
-         inkscape:connector-curvature="0"
-         id="path842"
-         d="m 160.73973,82.66328 4.68225,9.82564 h 10.12175 l -4.66304,-9.82564 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#42ff6b;fill-opacity:1;stroke-width:3.27948618px"
-         sodipodi:nodetypes="ccccc" />
-      <path
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#ff6cd5;fill-opacity:1;stroke-width:3.27948618px"
-         d="m 183.63319,56.318474 4.73345,9.928151 h 10.17301 l -4.71427,-9.928151 z"
-         id="path848"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc" />
-      <path
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#53dfff;fill-opacity:1;stroke-width:3.27948618px"
-         d="m 179.35263,69.538903 4.68865,9.832064 h 10.14736 l -4.66943,-9.832064 z"
-         id="path850"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc" />
-      <path
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#42ff6b;fill-opacity:1;stroke-width:3.27948618px"
-         d="m 175.02721,82.66328 4.68225,9.82564 h 10.12175 l -4.66304,-9.82564 z"
-         id="path852"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc" />
-      <path
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#fcfb5e;fill-opacity:1;stroke-width:3.27948618px"
-         d="m 167.08974,95.892446 4.68225,9.825624 h 10.12175 l -4.66304,-9.825624 z"
-         id="path854"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc" />
+         sodipodi:nodetypes="ccccc"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#d2ff58;fill-opacity:1;stroke-width:3.27948618px"
+         d="m 157.33795,191.8984 4.68225,9.82564 h 10.12175 l -4.66304,-9.82564 z"
+         id="path998"
+         inkscape:connector-curvature="0" />
       <path
          sodipodi:nodetypes="ccccc"
          inkscape:connector-curvature="0"
-         id="path864"
-         d="m 170.7939,95.892446 4.68225,9.825624 h 10.12175 l -4.66304,-9.825624 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#fcfb5e;fill-opacity:1;stroke-width:3.27948618px" />
+         id="path1000"
+         d="m 180.23141,165.5536 4.73345,9.92815 h 10.17301 l -4.71427,-9.92815 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#ff128b;fill-opacity:1;stroke-width:3.27948618px" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path1002"
+         d="m 175.95085,178.77403 4.68865,9.83206 h 10.14736 l -4.66943,-9.83206 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#ffa255;fill-opacity:1;stroke-width:3.27948618px" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path1004"
+         d="m 171.62543,191.8984 4.68225,9.82564 h 10.12175 l -4.66304,-9.82564 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#d2ff58;fill-opacity:1;stroke-width:3.27948618px" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path1006"
+         d="m 163.68796,205.12757 4.68225,9.82562 h 10.12175 l -4.66304,-9.82562 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#00f4a4;fill-opacity:1;stroke-width:3.27948618px" />
+      <path
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bangla MN';-inkscape-font-specification:'Bangla MN';fill:#00ea9e;fill-opacity:1;stroke-width:3.27948618px"
+         d="m 167.39212,205.12757 4.68225,9.82562 h 10.12175 l -4.66304,-9.82562 z"
+         id="path1008"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
     </g>
   </g>
 </svg>
