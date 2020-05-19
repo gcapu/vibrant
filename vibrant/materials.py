@@ -39,7 +39,7 @@ class Elastic:
             stress (tensor): It matches the dimension of the input strain.
         """
         # PyTorch's einsum does not support broadcasting yet, so in the meantime
-        #   we use our own `btt`.
+        #   we use our own batch dot multiplication.
         #   For more info see https://github.com/pytorch/pytorch/issues/30194
 
         return btdot(self.C, strain)
