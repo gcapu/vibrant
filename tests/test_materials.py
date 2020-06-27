@@ -4,29 +4,7 @@ import numpy as np
 
 
 from vibrant import materials
-from vibrant.math_extensions import btdot
 from vibrant.material_properties import mu_lambda
-
-
-def describe_btdot():
-    def size_6_batch_dot_matches_numpy_result():
-        large = torch.tensor(np.arange(2 * 2 * 3 * 6).reshape(2, 2, 3, 6))
-        small = torch.tensor(np.arange(2 * 6).reshape(2, 6))
-        result = btdot(large, small)
-        assert result.size() == (2, 2, 3)
-        for i in range(result.size(0)):
-            for j in range(result.size(1)):
-                for k in range(result.size(2)):
-                    assert result[i, j, k] == large[i, j, k].numpy() @ small[i].numpy()
-
-    def size_2_batch_double_dot_matches_numpy_result():
-        large = torch.tensor(np.arange(3 * 4 * 2 * 2).reshape(3, 4, 2, 2))
-        small = torch.tensor(np.arange(3 * 2 * 2).reshape(3, 2, 2))
-        result = btdot(large, small)
-        assert result.size() == (3, 4)
-        for b in range(result.size(0)):
-            b_out = np.tensordot(large[b].numpy(), small[b].numpy())
-            assert np.allclose(result[b].numpy(), b_out)
 
 
 def describe_elastic():
@@ -91,7 +69,7 @@ def describe_isotropicPS():
 
 
 def describe_material_properties():
-    def fails_with_wrong_number_of_args():
+    def with_wrong_number_of_args_it_fails():
         with pytest.raises(ValueError):
             mu_lambda(E=1, nu=0.3, mu=4)
             mu_lambda(E=1)

@@ -1,3 +1,6 @@
+import torch
+
+
 def btdot(large, small):
     """Batch dot tensor product.
 
@@ -22,3 +25,20 @@ def btdot(large, small):
     remaining_dims = small.size()[1:]
     sview = small.view(batch_dim, *extra_dims, *remaining_dims)
     return (large * sview).sum(tuple(range(dim_diff + 1, large.dim())))
+
+
+def assemble(length, conn, inputs):
+    '''Assemble the inputs according to the connectivity.'''
+    storage = torch.zeros(length, inputs.size(2))
+    for j in range(storage.size(1)):
+        for i in range(conn.size(1)):
+            # Add the elements of the input vector, according to the indices in
+            #  conn.
+            # Dev notes: This is faster but equivalent to
+            # storage[:, j].put_(conn[:, i], inputs[:, i, j], accumulate=True)
+            # conn and inputs have two batch dimensions. Instead of the loop over
+            # i we could have generated views of both tensors.
+            storage[:, j] += torch.bincount(
+                conn[:, i], weights=inputs[:, i, j], minlength=storage.size(0)
+            )
+    return storage

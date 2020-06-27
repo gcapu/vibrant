@@ -12,6 +12,20 @@ import torch
 from vibrant.math_extensions import btdot
 
 
+class BasicMaterial:
+    """Basic material that provides the stress and density
+    
+    It allows you to use a function as a material. It provides support for material 
+      density."""
+
+    def __init__(self, function, density):
+        self.function = function
+        self.density = density
+
+    def __call__(self, *args, **kwargs):
+        return self.function(*args, **kwargs)
+
+
 class Elastic:
     """Basic elastic Material.
 
