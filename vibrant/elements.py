@@ -17,8 +17,7 @@ class Truss:
         if self.nodes is None:
             raise TypeError('Truss elements are missing nodes.')
         Xdiff = self.nodes.X[self.conn[:, 1]] - self.nodes.X[self.conn[:, 0]]
-        x = self.nodes.x()
-        xdiff = x[self.conn[:, 1]] - x[self.conn[:, 0]]
+        xdiff = Xdiff + (self.nodes.u[self.conn[:, 1]] - self.nodes.u[self.conn[:, 0]])
         L0 = (Xdiff).norm(dim=1)
         L = (xdiff).norm(dim=1)
         self.strain = (L - L0) / L0

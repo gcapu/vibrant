@@ -38,7 +38,7 @@ def two_bars(E, rho, area, l):
     return Model(nodes, els)
 
 
-def describe_model():
+def describe_2D_truss_model():
     def test_mass(two_bars, E, area, l, rho):
         m = two_bars.mass()
         assert m.size() == (3, 1)
