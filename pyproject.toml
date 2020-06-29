@@ -46,9 +46,8 @@ pylint = "*"
 # Testing
 pytest = "^5.2"
 pytest-cov = "^2.8.1" # covfefe
-pytest-describe = "^1.0.0" # allows tests in nested describe-blocks
 pytest-random = "*"
-pylint-pytest = "*"
+pylint-pytest = "*" # remove false positives when linting pytest tests
 
 # Documentation
 mkdocs = "~1.0" # Building documentation

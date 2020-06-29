@@ -444,17 +444,6 @@ testing = ["fields", "hunter", "process-tests (2.0.2)", "six", "pytest-xdist", "
 
 [[package]]
 category = "dev"
-description = "Describe-style plugin for pytest"
-name = "pytest-describe"
-optional = false
-python-versions = "*"
-version = "1.0.0"
-
-[package.dependencies]
-pytest = ">=2.6.0"
-
-[[package]]
-category = "dev"
 description = "py.test plugin to randomize tests"
 name = "pytest-random"
 optional = false
@@ -603,7 +592,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "007edcb69196eea15b49c3ba4cc799e822e4ccad5a76d6956e1e9da5e9ae5900"
+content-hash = "e9e05b9c2ec3524b6f03404a3bff51ecd01d27e6874884e63d21adcf4cde0d29"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -871,11 +860,6 @@ pytest = [
 pytest-cov = [
     {file = "pytest-cov-2.10.0.tar.gz", hash = "sha256:1a629dc9f48e53512fcbfda6b07de490c374b0c83c55ff7a1720b3fccff0ac87"},
     {file = "pytest_cov-2.10.0-py2.py3-none-any.whl", hash = "sha256:6e6d18092dce6fad667cd7020deed816f858ad3b49d5b5e2b1cc1c97a4dba65c"},
-]
-pytest-describe = [
-    {file = "pytest-describe-1.0.0.tar.gz", hash = "sha256:3e2ea0e77efa09edb98cf90423bf1da21a462ed90bd3120f8f98fe7519a167d5"},
-    {file = "pytest_describe-1.0.0-py2-none-any.whl", hash = "sha256:cc3862662faa5a6fb721927aaef46b46cf787e4a8163e5459fc8778e650fabad"},
-    {file = "pytest_describe-1.0.0-py3-none-any.whl", hash = "sha256:95fe78639d4d16c4a1e7d62c70f63030b217c08d2ee6dca49559fe6e730c6696"},
 ]
 pytest-random = [
     {file = "pytest-random-0.02.tar.gz", hash = "sha256:92f25db8c5d9ffc20d90b51997b914372d6955cb9cf1f6ead45b90514fc0eddd"},

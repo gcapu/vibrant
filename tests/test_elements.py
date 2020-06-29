@@ -47,27 +47,6 @@ class TestMirroredTruss:
     def angle(self, request):
         return request.param
 
-    @pytest.fixture(params=[(1e-6, 2, 0.05, 3), (0.01, 2e11, 10, 3e3)])
-    def AELD(self, request):
-        """Area, E, Length, Density."""
-        return request.param
-
-    @pytest.fixture
-    def area(self, AELD):
-        return AELD[0]
-
-    @pytest.fixture
-    def E(self, AELD):
-        return AELD[1]
-
-    @pytest.fixture
-    def length(self, AELD):
-        return AELD[2]
-
-    @pytest.fixture
-    def density(self, AELD):
-        return AELD[3]
-
     @pytest.fixture
     def rand_strain(self, seed):
         return torch.rand(1).item() / 10 - 0.05
@@ -86,8 +65,8 @@ class TestMirroredTruss:
         return Nodes(X, u)
 
     @pytest.fixture
-    def elements(self, nodes, E, density, area):
-        material = BasicMaterial(lambda strain: E * strain, density)
+    def elements(self, nodes, young, density, area):
+        material = BasicMaterial(lambda strain: young * strain, density)
         conn = torch.tensor([[0, 1], [0, 2]], dtype=int)
         return Truss(conn, nodes, area, material)
 
@@ -108,15 +87,15 @@ class TestMirroredTruss:
         return 1e-4
 
     def test_force_matches_analytic(
-        self, elements, nodes, area, E, length, rand_strain, rtol, atol,
+        self, elements, nodes, area, young, length, rand_strain, rtol, atol,
     ):
         forces = elements.force()
         assert forces.size() == (3, 2)
         assert forces[1].norm() == pytest.approx(
-            abs(rand_strain * E * area), rel=rtol, abs=atol
+            abs(rand_strain * young * area), rel=rtol, abs=atol
         )
         assert torch.allclose(
-            -nodes.u[1] * E * area / length, forces[1], rtol=rtol, atol=atol
+            -nodes.u[1] * young * area / length, forces[1], rtol=rtol, atol=atol
         )
 
     def test_force_components_match(self, elements, rtol, atol):

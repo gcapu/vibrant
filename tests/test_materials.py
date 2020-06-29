@@ -7,7 +7,7 @@ from vibrant.material_properties import mu_lambda
 
 
 class TestElastic:
-    def voigt_isotropic_no_poisson_2D_produces_correct_stress(self):
+    def test_voigt_isotropic_no_poisson_2D_stress(self):
         torch.manual_seed(100)
         diag_elements = torch.randn(3)
         mat = materials.Elastic(torch.diag(diag_elements))
@@ -15,7 +15,7 @@ class TestElastic:
         stress = mat(strain)
         assert torch.allclose(stress, diag_elements * strain)
 
-    def tensor_full_3D_produces_correct_stress(self):
+    def test_tensor_full_3D_stress(self):
         torch.manual_seed(100)
         stiffness = np.arange(3 ** 4).reshape(3, 3, 3, 3) + 0.5
         strain = np.arange(2 * 3 * 3).reshape(2, 3, 3) - 2.5
@@ -60,7 +60,7 @@ class TestIsotropic2D:
         isomat = materials.IsotropicPE(2, 0.3)
         assert torch.allclose(isomat(torch.eye(3)), isomat.C.squeeze())
 
-    def produces_correct_stress(self):
+    def test_PS_stress(self):
         isomat = materials.IsotropicPS(2, 0.3)
         assert torch.allclose(isomat(torch.eye(3)), isomat.C.squeeze())
 

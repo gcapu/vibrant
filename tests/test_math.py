@@ -6,7 +6,7 @@ from vibrant.math_extensions import assemble, btdot
 
 
 class TestBtdot:
-    def size_6_batch_dot_matches_numpy_result(self):
+    def test_size_6_batch_dot(self):
         large = torch.tensor(np.arange(2 * 2 * 3 * 6).reshape(2, 2, 3, 6))
         small = torch.tensor(np.arange(2 * 6).reshape(2, 6))
         result = btdot(large, small)
@@ -16,7 +16,7 @@ class TestBtdot:
                 for k in range(result.size(2)):
                     assert result[i, j, k] == large[i, j, k].numpy() @ small[i].numpy()
 
-    def size_2_batch_double_dot_matches_numpy_result(self,):
+    def test_size_2_batch_double_dot(self,):
         large = torch.tensor(np.arange(3 * 4 * 2 * 2).reshape(3, 4, 2, 2))
         small = torch.tensor(np.arange(3 * 2 * 2).reshape(3, 2, 2))
         result = btdot(large, small)
