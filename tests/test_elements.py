@@ -1,10 +1,11 @@
+from math import cos, pi, sin
+
 import pytest
 import torch
-from math import cos, sin, pi
 
-from vibrant.nodes import Nodes
-from vibrant.materials import BasicMaterial
 from vibrant.elements import Truss
+from vibrant.materials import BasicMaterial
+from vibrant.nodes import Nodes
 
 
 class TestTrussWithMissingProperties:

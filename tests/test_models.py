@@ -1,11 +1,12 @@
+from math import cos, sin
+
 import pytest
 import torch
-from math import pi, cos, sin
 
-from vibrant.models import Model
-from vibrant.nodes import Nodes
 from vibrant.elements import Truss
 from vibrant.materials import BasicMaterial
+from vibrant.models import Model
+from vibrant.nodes import Nodes
 
 
 @pytest.fixture(params=[2.0, 2e11])
@@ -38,15 +39,15 @@ def two_bars(E, rho, area, l):
     return Model(nodes, els)
 
 
-def describe_2D_truss_model():
-    def test_mass(two_bars, E, area, l, rho):
+class TestTrussModel2D:
+    def test_mass(self, two_bars, E, area, l, rho):
         m = two_bars.mass()
         assert m.size() == (3, 1)
         assert m[0, 0].item() == pytest.approx(m[1, 0].item() / 2)
         assert m[0, 0].item() == pytest.approx(m[2, 0].item())
         assert m[0, 0].item() == pytest.approx(rho * l * area / 2)
 
-    def test_force(two_bars, E, area, l, rho):
+    def test_force(self, two_bars, E, area, l, rho):
         two_bars.nodes.u = torch.tensor(
             [[l * 0.1, 0], [0, 0], [l * sin(0.1), -(l - l * cos(0.1))]]
         )
@@ -56,7 +57,7 @@ def describe_2D_truss_model():
         assert f[2, 1].item() == pytest.approx(0)  # rotation
         assert f[2, 1].item() == pytest.approx(0)  # rotation
 
-    def test_acceleration(two_bars, E, area, l, rho):
+    def test_acceleration(self, two_bars, E, area, l, rho):
         two_bars.nodes.u = torch.tensor(
             [[l * 0.1, 0], [0, 0], [l * sin(0.1), -(l - l * cos(0.1))]]
         )
@@ -66,7 +67,7 @@ def describe_2D_truss_model():
         assert a[2, 1].item() == pytest.approx(0)  # rotation
         assert a[2, 1].item() == pytest.approx(0)  # rotation
 
-    def test_damping_force(two_bars, E, area, l, rho):
+    def test_damping_force(self, two_bars, E, area, l, rho):
         torch.manual_seed(100)
         two_bars.damping = 2
         two_bars.nodes.v = torch.rand(3, 2)

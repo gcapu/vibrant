@@ -1,6 +1,7 @@
+import time
+
 import pytest
 import torch
-import time
 
 
 @pytest.fixture(params=['random', 'deterministic'])

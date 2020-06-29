@@ -2,7 +2,7 @@
 Basic Materials.
 
 Materials are objects that have the following members:
-    A `__call__` method. The particular arguments and outputs may change from 
+    A `__call__` method. The particular arguments and outputs may change from
         material to material.
     A property or attribute named `density`, which returns the mass properties.
 """
@@ -13,10 +13,11 @@ from vibrant.math_extensions import btdot
 
 
 class BasicMaterial:
-    """Basic material that provides the stress and density
-    
-    It allows you to use a function as a material. It provides support for material 
-      density."""
+    """Basic material that provides the stress and density.
+
+    It allows you to use a function as a material. It provides support for material
+      density.
+    """
 
     def __init__(self, function, density):
         self.function = function
@@ -63,7 +64,7 @@ class Isotropic3D(Elastic):
 
     Args:
         E (float): Young's modulus or elastic modulus.
-        nu (float): Poisson's ratio. 
+        nu (float): Poisson's ratio.
         density (float): the density of the material.
     """
 
@@ -82,7 +83,7 @@ class IsotropicPS(Elastic):
 
     Args:
         E (float): Young's modulus or elastic modulus.
-        nu (float): Poisson's ratio. 
+        nu (float): Poisson's ratio.
         density (float): the density of the material.
     """
 
@@ -97,7 +98,7 @@ class IsotropicPE(Elastic):
 
     Args:
         E (float): Young's modulus or elastic modulus.
-        nu (float): Poisson's ratio. 
+        nu (float): Poisson's ratio.
         density (float): the density of the material.
     """
 

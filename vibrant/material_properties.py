@@ -1,10 +1,8 @@
-
-
 def mu_lambda(E=None, nu=None, lam=None, mu=None):
     """Get lame's parameters.
 
-    Build the lame constants of a material using the elastic constants for 
-        isotropic materials. You must specify exactly two of the four available 
+    Build the lame constants of a material using the elastic constants for
+        isotropic materials. You must specify exactly two of the four available
         constants. For example, you can provide E and mu as arguments.
 
     Args:
@@ -19,7 +17,7 @@ def mu_lambda(E=None, nu=None, lam=None, mu=None):
     number_of_inputs = sum(p is not None for p in (E, nu, lam, mu))
     if number_of_inputs != 2:
         raise ValueError(
-            f"Two elastic constants are expected and received"
+            "Two elastic constants are expected and received"
             + f" {number_of_inputs} instead."
         )
     if E is not None and nu is not None:

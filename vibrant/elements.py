@@ -1,17 +1,21 @@
 import torch
+
 from vibrant.math_extensions import assemble
 
 
 class Truss:
-    """Truss elements"""
+    """Truss elements."""
 
     def __init__(self, conn, nodes=None, area=1, material=None):
         self.conn = conn
         self.area = area
         self.material = material
         self.nodes = nodes
+        self.strain = None
+        self.stress = None
 
     def force(self):
+        """Compute the nodal force."""
         if self.material is None:
             raise TypeError('Truss elements are missing material.')
         if self.nodes is None:
@@ -29,6 +33,7 @@ class Truss:
         return force
 
     def mass(self):
+        """Compute the nodal mass."""
         if self.material is None:
             raise TypeError('Truss elements are missing material.')
         if self.nodes is None:

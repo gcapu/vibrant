@@ -2,7 +2,7 @@ import torch
 
 
 class Nodes:
-    "Nodes"
+    """Nodes container."""
 
     def __init__(self, X, u=None, v=None):
         self.X = X

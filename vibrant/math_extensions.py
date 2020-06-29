@@ -8,7 +8,7 @@ def btdot(large, small):
         The dot operation produces the sum of the multiplied components. For example,
         if small is 2D, perform a vector-vector multiplication. The first dimension
         of both tensors is a batch dimension and it must match or be broadcastable.
-        If large has extra dimensions, they are considered batch dimensions too. 
+        If large has extra dimensions, they are considered batch dimensions too.
 
     Args:
         large (tensor): its last `N` dimensions are multiplied by small. The remaining
@@ -28,7 +28,7 @@ def btdot(large, small):
 
 
 def assemble(length, conn, inputs):
-    '''Assemble the inputs according to the connectivity.'''
+    """Assemble the inputs according to the connectivity."""
     storage = torch.zeros(length, inputs.size(2))
     for j in range(storage.size(1)):
         for i in range(conn.size(1)):

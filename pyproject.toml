@@ -48,6 +48,7 @@ pytest = "^5.2"
 pytest-cov = "^2.8.1" # covfefe
 pytest-describe = "^1.0.0" # allows tests in nested describe-blocks
 pytest-random = "*"
+pylint-pytest = "*"
 
 # Documentation
 mkdocs = "~1.0" # Building documentation
