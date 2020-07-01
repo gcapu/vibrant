@@ -78,14 +78,6 @@ class TestMirroredTruss:
         assert nodal_mass.size() == (3, 1)
         assert torch.allclose(nodal_mass, real_mass)
 
-    @pytest.fixture
-    def rtol(self):
-        return 1e-3
-
-    @pytest.fixture
-    def atol(self):
-        return 1e-4
-
     def test_force_matches_analytic(
         self, elements, nodes, area, young, length, rand_strain, rtol, atol,
     ):

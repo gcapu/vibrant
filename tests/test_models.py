@@ -56,3 +56,49 @@ class TestTrussModel2D:
         v00 = two_bars.nodes.v[0, 0].item()
         m = density * length * area / 2
         assert f[0, 0].item() == pytest.approx(-m * v00 * two_bars.damping)
+
+
+@pytest.mark.usefixtures("seed")
+class TestTruss3D:
+    def test_single_bar_force(self, length, area, young, rtol):
+        # assign a random initial position and normalize to length
+        X = torch.rand((2, 3)) + 100
+        X = length * X / (X[1] - X[0]).norm()
+        # align the bar to z direction and stretch it
+        strain = 0.1
+        u = torch.stack(
+            [torch.zeros(3), X[0] - X[1] + length * torch.tensor([0, 0, 1 + strain])]
+        )
+        nodes = Nodes(X, u)
+        mat = BasicMaterial(lambda e: young * e)
+        conn = torch.tensor([[0, 1]], dtype=int)
+        elements = Truss(conn, nodes, area, mat)
+        model = Model(nodes, elements)
+        assert model.force()[1, 2] == pytest.approx(-strain * young * area, rel=rtol)
+
+    def pyramid_truss(self, length, area, young, density=1):
+        X = torch.tensor([[0, 0, 0], [0, 1, 0], [1, 1, 0], [1, 0, 0], [1, 1, 1]])
+        X = (X + 100.0) * length
+        u = torch.rand(8, 3) * length / 2.0
+        v = torch.rand(8, 3) * length / 2.0
+        nodes = Nodes(X, u, v)
+        conn = torch.tensor(
+            [[0, 1], [1, 2], [2, 3], [3, 0], [0, 2], [1, 4], [2, 4], [3, 4]], dtype=int,
+        )
+        material = BasicMaterial(lambda e: young * e, density)
+        elements = Truss(conn, nodes, area, material)
+        model = Model(nodes, elements)  # zero damping
+        return model
+
+    def test_truss_3D_force(self, length, area, young):
+        model = self.pyramid_truss(length, area, young)
+        # obtainig the force at node 4
+        analytic_result = torch.zeros((3,))
+        for node_id in [1, 2, 3]:
+            Xdiff = model.nodes.X[4] - model.nodes.X[node_id]
+            xdiff = Xdiff + (model.nodes.u[4] - model.nodes.u[node_id])
+            l0 = Xdiff.norm()
+            l = xdiff.norm()
+            stress = young * (l - l0) / l0
+            analytic_result -= area * stress * xdiff / l
+        assert torch.allclose(model.force()[4], analytic_result)

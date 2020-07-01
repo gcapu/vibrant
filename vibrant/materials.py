@@ -19,7 +19,7 @@ class BasicMaterial:
       density.
     """
 
-    def __init__(self, function, density):
+    def __init__(self, function, density=1):
         self.function = function
         self.density = density
 
