@@ -56,7 +56,6 @@ mkdocs-material = "*"
 [tool.black]
 
 target-version = ["py37"]
-skip-string-normalization = true
 
 [tool.isort]
 

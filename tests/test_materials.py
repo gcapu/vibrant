@@ -22,7 +22,7 @@ class TestElastic:
         mat = materials.Elastic(torch.tensor(stiffness))
         stress = mat(torch.tensor(strain))
         assert np.allclose(
-            stress.numpy(), np.einsum('ijkl, bkl -> bij', stiffness, strain)
+            stress.numpy(), np.einsum("ijkl, bkl -> bij", stiffness, strain)
         )
 
 

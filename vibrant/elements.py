@@ -17,9 +17,9 @@ class Truss:
     def force(self):
         """Compute the nodal force."""
         if self.material is None:
-            raise TypeError('Truss elements are missing material.')
+            raise TypeError("Truss elements are missing material.")
         if self.nodes is None:
-            raise TypeError('Truss elements are missing nodes.')
+            raise TypeError("Truss elements are missing nodes.")
         Xdiff = self.nodes.X[self.conn[:, 1]] - self.nodes.X[self.conn[:, 0]]
         xdiff = Xdiff + (self.nodes.u[self.conn[:, 1]] - self.nodes.u[self.conn[:, 0]])
         L0 = (Xdiff).norm(dim=1)
@@ -35,9 +35,9 @@ class Truss:
     def mass(self):
         """Compute the nodal mass."""
         if self.material is None:
-            raise TypeError('Truss elements are missing material.')
+            raise TypeError("Truss elements are missing material.")
         if self.nodes is None:
-            raise TypeError('Truss elements are missing nodes.')
+            raise TypeError("Truss elements are missing nodes.")
         Xdiff = self.nodes.X[self.conn[:, 1]] - self.nodes.X[self.conn[:, 0]]
         L0 = (Xdiff).norm(dim=1)
         element_mass = L0 * self.area * self.material.density / 2
