@@ -44,3 +44,7 @@ class Model:
         """Update the mass and the force, and calculate the acceleration."""
         # return nodal acceleration
         return self.force() / self.mass()
+
+    def apply_constraints(self, field="v"):
+        for constraint in self.constraints:
+            constraint(self.nodes, field)

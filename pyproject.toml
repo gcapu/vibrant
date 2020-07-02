@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vibrant"
-version = "0.0.3"
+version = "0.0.4"
 description = "PyTorch powered Finite Elements"
 
 license = "MIT"

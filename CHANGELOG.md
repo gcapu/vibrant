@@ -1,6 +1,8 @@
 # Changelog
 
-## [Unreleased]
+## [0.0.4] - 2020-07-2
+
+- Add basic constrain capability
 
 ## [0.0.3] - 2020-06-29
 

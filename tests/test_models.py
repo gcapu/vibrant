@@ -3,6 +3,7 @@ from math import cos, sin
 import pytest
 import torch
 
+from vibrant.constraints import ImposeVelocity
 from vibrant.elements import Truss
 from vibrant.materials import BasicMaterial
 from vibrant.models import Model
@@ -102,3 +103,14 @@ class TestTruss3D:
             stress = young * (l - l0) / l0
             analytic_result -= area * stress * xdiff / l
         assert torch.allclose(model.force()[4], analytic_result)
+
+    def test_truss_3D_constraints(self, length, area, young):
+        model = self.pyramid_truss(length, area, young)
+        result = model.nodes.v.clone()
+        result[0] = torch.tensor([10, 0, 0])
+        result[2] = torch.tensor([0, 1, 1])
+        result[3] = torch.tensor([0, 1, 1])
+        model.constraints.append(ImposeVelocity([0], [10, 0, 0]))
+        model.constraints.append(ImposeVelocity([2, 3], [0, 1, 1]))
+        model.apply_constraints()
+        assert torch.allclose(model.nodes.v, result)
