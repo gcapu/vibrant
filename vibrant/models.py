@@ -47,4 +47,4 @@ class Model:
 
     def apply_constraints(self, field="v"):
         for constraint in self.constraints:
-            constraint(self.nodes, field)
+            constraint(field)

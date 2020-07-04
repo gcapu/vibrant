@@ -28,8 +28,8 @@ class TestImposeVelocityConstraint:
         constrained_ids = [1, 2]
         unconstrained_ids = list(set(range(len(nodes))) - set(constrained_ids))
         unconstrained_values = nodes.v[unconstrained_ids]
-        vel_constraint = ImposeVelocity(constrained_ids, vel)
-        vel_constraint(nodes)
+        vel_constraint = ImposeVelocity(nodes, constrained_ids, vel)
+        vel_constraint()
         # check that the unconstrained nodes weren't modified
         assert torch.allclose(nodes.v[unconstrained_ids], unconstrained_values)
         # check that the constrained nodes now have the right value
@@ -37,7 +37,7 @@ class TestImposeVelocityConstraint:
             assert torch.allclose(nodes.v[i], torch.as_tensor(vel, dtype=torch.float))
 
     def test_constrain_displacement_fails(self, nodes, length, dim):
-        vel_constraint = ImposeVelocity([1, 2], [length / 10.0] * dim)
+        vel_constraint = ImposeVelocity(nodes, [1, 2], [length / 10.0] * dim)
         original_position = nodes.u.clone()
-        vel_constraint(nodes, "u")
+        vel_constraint("u")
         assert torch.allclose(nodes.u, original_position)
